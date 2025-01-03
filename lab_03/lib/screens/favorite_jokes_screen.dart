@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 class FavoriteJokesScreen extends StatelessWidget {
   final List<Map<String, String>> favoriteJokes;
 
-  const FavoriteJokesScreen({Key? key, required this.favoriteJokes})
-      : super(key: key);
+  const FavoriteJokesScreen({super.key, required this.favoriteJokes});
 
   @override
   Widget build(BuildContext context) {

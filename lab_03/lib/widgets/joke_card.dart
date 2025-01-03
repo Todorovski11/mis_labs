@@ -4,7 +4,7 @@ class JokeCard extends StatelessWidget {
   final String title;
   final VoidCallback onTap;
 
-  const JokeCard({required this.title, required this.onTap, Key? key}) : super(key: key);
+  const JokeCard({required this.title, required this.onTap, super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -42,16 +42,18 @@ class HomeScreen extends StatelessWidget {
     ),
   ];
 
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Индекс: 211239'), // Replace with your index
+        title: const Text('Индекс: 211239'), // Replace with your index
         backgroundColor: Colors.blue,
       ),
       body: GridView.builder(
-        padding: EdgeInsets.all(8.0),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        padding: const EdgeInsets.all(8.0),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 8.0,
           mainAxisSpacing: 8.0,
@@ -77,9 +79,9 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(product.image, height: 80, fit: BoxFit.cover), // Updated to Image.asset
-                  SizedBox(height: 8.0),
-                  Text(product.name, style: TextStyle(fontSize: 16.0)),
-                  Text(product.price, style: TextStyle(color: Colors.green)),
+                  const SizedBox(height: 8.0),
+                  Text(product.name, style: const TextStyle(fontSize: 16.0)),
+                  Text(product.price, style: const TextStyle(color: Colors.green)),
                 ],
               ),
             ),

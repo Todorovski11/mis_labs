@@ -4,15 +4,17 @@ import '../services/api_services.dart';
 class RandomJokeScreen extends StatelessWidget {
   final ApiService apiService = ApiService();
 
+  RandomJokeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Random Joke'),
+        title: const Text('Random Joke'),
         backgroundColor: Colors.deepPurple,
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [Colors.deepPurple, Colors.cyan],
             begin: Alignment.topLeft,
@@ -23,12 +25,12 @@ class RandomJokeScreen extends StatelessWidget {
           future: apiService.fetchRandomJoke(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(child: CircularProgressIndicator(color: Colors.white));
+              return const Center(child: CircularProgressIndicator(color: Colors.white));
             } else if (snapshot.hasError) {
               return Center(
                 child: Text(
                   'Error: ${snapshot.error}',
-                  style: TextStyle(color: Colors.red, fontSize: 18),
+                  style: const TextStyle(color: Colors.red, fontSize: 18),
                 ),
               );
             } else if (snapshot.hasData) {
@@ -48,16 +50,16 @@ class RandomJokeScreen extends StatelessWidget {
                       children: [
                         Text(
                           joke['setup'],
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                           ),
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Text(
                           joke['punchline'],
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 18,
                             fontStyle: FontStyle.italic,
                             color: Colors.white70,
@@ -69,7 +71,7 @@ class RandomJokeScreen extends StatelessWidget {
                 ),
               );
             }
-            return Center(child: Text('No joke found'));
+            return const Center(child: Text('No joke found'));
           },
         ),
       ),

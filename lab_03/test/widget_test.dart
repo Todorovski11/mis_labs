@@ -12,7 +12,7 @@ import 'package:joke_app/main.dart'; // Replace joke_app with the actual package
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build the app and trigger a frame.
-    await tester.pumpWidget(MyApp()); // Ensure MyApp exists in main.dart.
+    await tester.pumpWidget(const MyApp()); // Ensure MyApp exists in main.dart.
 
     // Verify that the counter starts at 0.
     expect(find.text('0'), findsOneWidget, reason: 'Initial counter value should be 0');

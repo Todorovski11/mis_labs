@@ -9,7 +9,7 @@ import 'random_joke_screen.dart';
 import 'favorite_jokes_screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -181,10 +181,10 @@ class JokeCategoryTile extends StatelessWidget {
   final VoidCallback onTap;
 
   const JokeCategoryTile({
-    Key? key,
+    super.key,
     required this.jokeType,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

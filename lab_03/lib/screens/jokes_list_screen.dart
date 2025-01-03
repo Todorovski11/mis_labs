@@ -6,10 +6,10 @@ class JokesListScreen extends StatelessWidget {
   final List<Map<String, String>> favoriteJokes;
 
   const JokesListScreen({
-    Key? key,
+    super.key,
     required this.type,
     required this.favoriteJokes,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class JokesListScreen extends StatelessWidget {
                     title: Text(joke['setup']),
                     subtitle: Text(joke['punchline']),
                     trailing: IconButton(
-                      icon: Icon(Icons.favorite),
+                      icon: const Icon(Icons.favorite),
                       onPressed: () {
                         favoriteJokes.add({
                           'setup': joke['setup'],
